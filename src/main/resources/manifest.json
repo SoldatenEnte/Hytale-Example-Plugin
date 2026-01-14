@@ -1,0 +1,20 @@
+{
+  "Group": "ExamplePublisher",
+  "Name": "ExamplePlugin",
+  "Version": "1.0.0",
+  "Description": "A template for Hytale modding.",
+  "Authors": [
+    {
+      "Name": "YourName",
+      "Email": "contact@example.com",
+      "Url": "https://example.com"
+    }
+  ],
+  "Website": "https://example.com",
+  "ServerVersion": "*",
+  "Main": "com.examplepublisher.exampleplugin.ExamplePlugin",
+  "IncludesAssetPack": true,
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false
+}

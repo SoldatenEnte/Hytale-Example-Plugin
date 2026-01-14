@@ -1,0 +1,46 @@
+$C = "../Common.ui";
+
+$C.@PageOverlay {
+
+  $C.@Container {
+    Anchor: (Width: 400, Height: 300);
+
+    #Title {
+      Group {
+        $C.@Title {
+          @Text = "EXAMPLE GUI";
+        }
+      }
+    }
+
+    #Content {
+      LayoutMode: Top;
+      Padding: (Top: 20, Left: 20, Right: 20);
+      
+      Label #WelcomeMessage {
+        Text: "Loading...";
+        Style: (
+          FontSize: 18,
+          TextColor: #ffffffff,
+          Wrap: true,
+          RenderBold: true,
+          Alignment: Center
+        );
+        // Removed invalid Anchor
+        Padding: (Bottom: 20);
+      }
+
+      Label {
+        Text: "This GUI uses InteractiveCustomUIPage and UICommandBuilder.";
+        Style: (
+          FontSize: 14,
+          TextColor: #ccccccff,
+          Wrap: true,
+          Alignment: Center
+        );
+      }
+    }
+  }
+}
+
+$C.@BackButton {}
