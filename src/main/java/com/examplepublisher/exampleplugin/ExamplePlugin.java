@@ -26,13 +26,13 @@ public class ExamplePlugin extends JavaPlugin {
 
     @Override
     protected void setup() {
-        LOGGER.atInfo().log("Setting up plugin {}", getName());
+        LOGGER.atInfo().log("Setting up plugin " + getName());
 
         saveConfig();
         registerCommands();
         registerEvents();
 
-        LOGGER.atInfo().log("Plugin {} initialized", getName());
+        LOGGER.atInfo().log("Plugin " + getName() + " initialized");
     }
 
     private void saveConfig() {
