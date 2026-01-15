@@ -16,7 +16,7 @@ $C.@PageOverlay {
     #Content {
       LayoutMode: Top;
       Padding: (Top: 20, Left: 20, Right: 20);
-      
+
       Label #WelcomeMessage {
         Text: "Loading...";
         Style: (
@@ -26,7 +26,6 @@ $C.@PageOverlay {
           RenderBold: true,
           Alignment: Center
         );
-        // Removed invalid Anchor
         Padding: (Bottom: 20);
       }
 

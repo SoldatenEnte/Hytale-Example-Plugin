@@ -1,7 +1,5 @@
 package com.examplepublisher.exampleplugin.gui;
 
-import javax.annotation.Nonnull;
-
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
@@ -12,29 +10,27 @@ import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
-public class ExampleGui extends InteractiveCustomUIPage<ExampleGui.ExampleGuiData> {
+public final class ExampleGui extends InteractiveCustomUIPage<ExampleGui.ExampleGuiData> {
 
     private final String message;
 
-    public ExampleGui(@Nonnull PlayerRef playerRef, String message) {
+    public ExampleGui(PlayerRef playerRef, String message) {
         super(playerRef, CustomPageLifetime.CanDismiss, ExampleGuiData.CODEC);
         this.message = message;
     }
 
     @Override
-    public void build(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder uiEventBuilder, @Nonnull Store<EntityStore> store) {
+    public void build(Ref<EntityStore> ref,
+                      UICommandBuilder uiCommandBuilder,
+                      UIEventBuilder uiEventBuilder,
+                      Store<EntityStore> store) {
+
         uiCommandBuilder.append("Pages/ExamplePublisher_ExamplePlugin_Gui.ui");
-        
-        uiCommandBuilder.set("#WelcomeMessage.Text", this.message);
+        uiCommandBuilder.set("#WelcomeMessage.Text", message);
     }
 
-    @Override
-    public void handleDataEvent(@Nonnull Ref<EntityStore> ref, @Nonnull Store<EntityStore> store, @Nonnull ExampleGuiData data) {
-        super.handleDataEvent(ref, store, data);
-    }
-
-    public static class ExampleGuiData {
-        public static final BuilderCodec<ExampleGuiData> CODEC = BuilderCodec.builder(ExampleGuiData.class, ExampleGuiData::new)
-                .build();
+    public static final class ExampleGuiData {
+        public static final BuilderCodec<ExampleGuiData> CODEC =
+                BuilderCodec.builder(ExampleGuiData.class, ExampleGuiData::new).build();
     }
 }
